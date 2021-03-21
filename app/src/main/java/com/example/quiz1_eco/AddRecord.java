@@ -14,6 +14,7 @@ public class AddRecord extends AppCompatActivity {
 
     private EditText nameInput, idInput;
     private Button startRecordBtn;
+    private String id, name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,44 +25,70 @@ public class AddRecord extends AppCompatActivity {
         idInput = findViewById(R.id.idInput);
         startRecordBtn = findViewById(R.id.startRecordBtn);
 
-        String id = idInput.getText().toString();
-
         startRecordBtn.setOnClickListener(
+
                 (v) -> {
 
-                    if (nameInput.getText().toString().equals("") || idInput.getText().toString().equals("")) {
-                        Toast.makeText(this, "Completa la información para continuar", Toast.LENGTH_LONG).show();
-                    } else {
+                    id = idInput.getText().toString();
+                    name = nameInput.getText().toString();
 
-                        String idRecords = getSharedPreferences("records", MODE_PRIVATE).getString("idRecords", "");
-                        Log.e("", idRecords);
-                        Log.d("", id);
-                        addRecord(id);
-                        Intent i = new Intent(this, Nexo.class);
-                        startActivity(i);
-
-
+                    if (validateInputsCompletion() && validateIdRecord(id)) {
+                        startForm();
                     }
-
-                    //
 
                 }
         );
     }
 
-    public void addRecord(String s) {
+    public void startForm() {
+
+        Toast.makeText(this, "Id " + id, Toast.LENGTH_LONG).show();
+        //  String idRecords = getSharedPreferences("records", MODE_PRIVATE).getString("idRecords", "");
+        //   Log.e("", idRecords);
+        Log.d("", id);
+        //  validateIdRecord(id);
+
+        Intent i = new Intent(this, Nexo.class);
+        i.putExtra("name", name);
+        i.putExtra("id", id);
+        startActivity(i);
+        finish();
+
+    }
+
+    public boolean validateInputsCompletion() {
+
+        boolean validate;
+
+        if (nameInput.getText().toString().equals("") || idInput.getText().toString().equals("")) {
+            Toast.makeText(this, "Completa la información para continuar", Toast.LENGTH_LONG).show();
+            validate = false;
+        } else {
+            validate = true;
+        }
+
+        return validate;
+    }
+
+    public boolean validateIdRecord(String s) {
+
+        boolean validate;
 
         SharedPreferences preferences = getSharedPreferences("records", MODE_PRIVATE);
         String idRecords = preferences.getString("idRecords", "");
 
         if (idRecords.contains(s)) {
             Toast.makeText(this, "Ya existe un registro con este Id", Toast.LENGTH_LONG).show();
+            validate = false;
         } else {
 
-            String idRecord = idRecords + "" + s;
-            preferences.edit().putString("idRecords", idRecord + s).apply();
+            validate = true;
+            String idRecord = s + "\n";
+            preferences.edit().putString("idRecords", idRecords + idRecord).apply();
 
         }
+
+        return validate;
 
     }
 }

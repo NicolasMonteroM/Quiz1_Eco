@@ -7,7 +7,7 @@
     tools:context=".Symptoms">
 
     <CheckBox
-        android:id="@+id/nex15"
+        android:id="@+id/symptom1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <CheckBox
-        android:id="@+id/nex17"
+        android:id="@+id/symptom3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -54,10 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nex16" />
+        app:layout_constraintTop_toBottomOf="@+id/symptom2" />
 
     <CheckBox
-        android:id="@+id/nex16"
+        android:id="@+id/symptom2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -68,10 +68,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nex15" />
+        app:layout_constraintTop_toBottomOf="@+id/symptom1" />
 
     <CheckBox
-        android:id="@+id/nex19"
+        android:id="@+id/none"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -82,10 +82,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nex21" />
+        app:layout_constraintTop_toBottomOf="@+id/symptom6" />
 
     <Button
-        android:id="@+id/nextBtn2"
+        android:id="@+id/finishBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -98,7 +98,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
-        android:id="@+id/nex18"
+        android:id="@+id/symptom4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -109,10 +109,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nex17" />
+        app:layout_constraintTop_toBottomOf="@+id/symptom3" />
 
     <CheckBox
-        android:id="@+id/nex20"
+        android:id="@+id/symptom5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -123,10 +123,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nex18" />
+        app:layout_constraintTop_toBottomOf="@+id/symptom4" />
 
     <CheckBox
-        android:id="@+id/nex21"
+        android:id="@+id/symptom6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -137,6 +137,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nex20" />
+        app:layout_constraintTop_toBottomOf="@+id/symptom5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
